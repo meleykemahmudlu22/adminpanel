@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: rgb(230, 242, 248);
+}
+.BoxContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    height: 100vh;
+}
+.Boxs{
+    width: 260px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius: 10px;
+    position: relative;
+    border: 1px solid rgb(35, 151, 247);
+    cursor: pointer;
+   
+}
+.BoxsbottmContainer{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+   
+   
+}
+.BoxsCommon{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+}
+.BoxTopText{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.Boxs::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: rgb(0, 102, 255);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+.Boxs:hover::before{
+    width: 100%;
+}
+.BoxImg img{
+    width: 250px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+.BoxImg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.BoxBtn button{
+
+width: 250px;
+padding: 10px;
+cursor: pointer;
+border-radius: 8px;
+border: none;
+background-color: #5aacf8;
+color: white;
+
+}
+.BoxBtn button:hover{
+    color: #000;
+    background-color: rgb(0, 140, 255);
+}
+.BoxTitle{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 15px;
+}
+.Boxfilter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 70%;
+    background-color: white;
+    border: 1px solid rgb(205, 222, 253);
+    padding: 20px;
+    border-radius: 7px;
+}
+.boxinp input{
+    padding: 15px;
+    width: 500px;
+    border-radius: 7px;
+    outline: none;
+  border: 1px solid rgb(179, 203, 248);
+}
+.boxinp input::placeholder{
+     font-size: 15px;
+}
+.BoxFilterBtn button{
+    width: 300px;
+    cursor: pointer;
+    padding: 15px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(179, 203, 248);
+}
