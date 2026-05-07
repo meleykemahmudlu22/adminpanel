@@ -1,12 +1,17 @@
 import React from 'react'
-import Box from './assets/components/Box/Box'
+import { Route, Routes } from 'react-router-dom'
 import Admin from './assets/components/admin/Admin'
+import Home from './assets/Home/Home'
 
 const App = () => {
   return (
     <div>
-      <Box/>
-      <Admin/>
+    
+     
+      <Routes>
+        <Route  path='admin' element={<Admin/>}/>
+        <Route  path='/' element={<Home/>}/>
+      </Routes>
     </div>
   )
 }

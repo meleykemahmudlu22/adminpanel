@@ -1,8 +1,13 @@
 import React from 'react'
 import "./box.css"
+import { Link } from 'react-router-dom'
 const Box = () => {
   return (
     <div>
+        <Link to="/admin">
+        <button>admin</button>
+        </Link>
+        
     <div className="BoxContainer">
         <div className="Boxfilter">
             <div className="boxinp">

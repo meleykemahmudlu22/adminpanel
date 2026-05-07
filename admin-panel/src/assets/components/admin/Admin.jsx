@@ -5,6 +5,8 @@ import { IoIosBook } from "react-icons/io";
 import { IoIosBookmark } from "react-icons/io";
 import { MdModeEdit } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
+import { CiSearch } from "react-icons/ci";
+import { FaPlus } from "react-icons/fa6";
 import "./admin.css"
 
 const Admin = () => {
@@ -46,7 +48,21 @@ const Admin = () => {
             </div>
         </div>
         <div className="DashboardContent">
-          <table>
+          <div className="DashboardText">
+            <h2>Kitablar</h2>
+          </div>
+          <div className="TableSearch">
+            <div className="serchinp">
+              <CiSearch  className='serchinpicon'/>
+              <input  placeholder='search' type="text" />
+            </div>
+            <div className="searchbtn">
+              <FaPlus className='searchbtnicon' />
+              <button>Add Book</button>
+            </div>
+          </div>
+        <div className="tablecontainer">
+            <table>
             <thead>
               <tr>
                 <th>Şəkil</th>
@@ -121,6 +137,7 @@ const Admin = () => {
              
             </tbody>
           </table>
+        </div>
         </div>
       </div>
     </div>
