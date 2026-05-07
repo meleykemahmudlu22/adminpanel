@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { FaBookAtlas } from "react-icons/fa6";
 import { FaBook } from "react-icons/fa6";
 import { IoIosBook } from "react-icons/io";
@@ -7,9 +7,12 @@ import { MdModeEdit } from "react-icons/md";
 import { AiFillDelete } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
+
+
 import "./admin.css"
 
 const Admin = () => {
+
   return (
     <div>
       <div className="AdminContainer">
