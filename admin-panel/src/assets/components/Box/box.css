@@ -15,7 +15,7 @@ body{
 }
 .Boxs{
     width: 260px;
-    height: 350px;
+    height: 390px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,6 +23,7 @@ body{
   border-bottom-left-radius:10px ;
   border-bottom-right-radius: 10px;
     position: relative;
+    background-color: white;
     border: 1px solid rgb(35, 151, 247);
     cursor: pointer;
    
@@ -31,6 +32,7 @@ body{
     display: flex;
     justify-content: center;
     gap: 50px;
+    
    
    
 }
@@ -60,8 +62,8 @@ body{
     width: 100%;
 }
 .BoxImg img{
-    width: 250px;
-    height: 170px;
+    width: 260px;
+    height: 260px;
     object-fit: cover;
     border-radius: 10px;
 

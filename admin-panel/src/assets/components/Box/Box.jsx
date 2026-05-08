@@ -7,6 +7,8 @@ const Box = () => {
       const [data,setData]= useState([])
       const [search,setSearch]=useState("")
       const [open,setOpen]=useState(false)
+      const[category,setCategory]=useState("All")
+
       
      useEffect(() => {
      async function getdata(){
@@ -16,7 +18,8 @@ const Box = () => {
      getdata()
      }, [])
 
-     const fileterdata=data.filter(item=>item.mehsul.toLowerCase().includes(search.toLowerCase()))
+     const fileterdata=data.filter(item=>item.mehsul.toLowerCase().includes(search.toLowerCase())
+     &&(category=== "All"||item.category===category))
 
   return (
     <div>
@@ -37,9 +40,10 @@ const Box = () => {
                      <div className="filterdropdown">
                     <nav>
                         <ul>
-                            <li>Smartfon</li>
-                            <li>Noutbook</li>
-                            <li>Fotoaparatlar</li>
+                            <li onClick={()=>setCategory("All")}>All</li>
+                            <li onClick={()=>setCategory("smartfon")}>Smartfon</li>
+                            <li onClick={()=>setCategory("noutbuk")}>Noutbuk</li>
+                            <li onClick={()=>setCategory("fotoaparat")}>Fotoaparatlar</li>
                         </ul>
                     </nav>
                 </div>
