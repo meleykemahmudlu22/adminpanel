@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { SlArrowDown } from "react-icons/sl";
 import axios from 'axios';
 import "./box.css"
 import { Link } from 'react-router-dom'
@@ -27,7 +28,17 @@ const Box = () => {
                 <input value={search} onChange={(e)=>setSearch( e.target.value)} placeholder='search' type="text" />
             </div>
             <div className="BoxFilterBtn">
+                < SlArrowDown className='filtericon' />
                 <button>All Categories</button>
+                <div className="filterdropdown">
+                    <nav>
+                        <ul>
+                            <li>Smartfon</li>
+                            <li>Noutbook</li>
+                            <li>Fotoaparatlar</li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
             <div className="BoxFilterBtn">
                 <button>Price</button>
