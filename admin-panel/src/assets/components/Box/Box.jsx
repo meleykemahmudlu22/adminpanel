@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom'
 const Box = () => {
       const [data,setData]= useState([])
       const [search,setSearch]=useState("")
+      const [open,setOpen]=useState(false)
+      
      useEffect(() => {
      async function getdata(){
       let {data}= await axios.get("https://678e58c7a64c82aeb1200f8c.mockapi.io/new")
@@ -28,9 +30,11 @@ const Box = () => {
                 <input value={search} onChange={(e)=>setSearch( e.target.value)} placeholder='search' type="text" />
             </div>
             <div className="BoxFilterBtn">
-                < SlArrowDown className='filtericon' />
-                <button>All Categories</button>
-                <div className="filterdropdown">
+                < SlArrowDown className='filtericon' onClick={()=>setOpen(!open)}/>
+                <button onClick={() => setOpen(!open)} >All Categories</button>
+               {
+                open&&(
+                     <div className="filterdropdown">
                     <nav>
                         <ul>
                             <li>Smartfon</li>
@@ -39,6 +43,8 @@ const Box = () => {
                         </ul>
                     </nav>
                 </div>
+                )
+               }
             </div>
             <div className="BoxFilterBtn">
                 <button>Price</button>
