@@ -21,6 +21,16 @@ const AdminBook = () => {
                         <div className="searchbtn">
                           <FaPlus className='searchbtnicon' />
                           <button>Add Book</button>
+                          <div className="addbokdropdown">
+                           <div className="dropdowninp">
+                            <h2>Add book</h2>
+                            <input placeholder="kitabın adı" type="text" />
+                            <input placeholder="author" type="text" />
+                            <input placeholder="image" type="text" />
+                            <input placeholder="plane" type="text" />
+                            <button>Add</button>
+                           </div>
+                          </div>
                         </div>
                       </div>
                     <div className="tablecontainer">
