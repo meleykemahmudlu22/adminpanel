@@ -11,6 +11,8 @@ table td:last-child {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: aqua; */
+  height: 120px;
 }
 table{
    width: 100%;
@@ -25,11 +27,59 @@ table{
      gap: 20px;
     /* background-color: red; */
 }
+.TableSearch{
+    display: flex;
+    gap: 20px;
+    /* justify-content: space-around; */
+}
 .actionbtn{
   position: relative;
     display: flex;
     /* width: 30px; */
     gap: 10px;
+}
+.serchinp{
+     position: relative;
+}
+.serchinp input{
+    
+   border: 1px solid rgb(0, 183, 255);
+    border-radius: 7px;
+    width: 450px;
+    padding: 15px;
+}
+.serchinpicon{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+   
+}
+.serchinp input::placeholder{
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.searchbtn{
+    position: relative;
+}
+.searchbtnicon{
+    position: absolute;
+     top: 15px;
+    left: 10px;
+     color: white;
+ cursor: pointer;
+}
+.searchbtn button{
+    border: 1px solid rgb(0, 183, 255);
+   background-color: rgb(0, 153, 255);
+    border-radius: 7px;
+    width: 300px;
+    padding: 15px;
+    color: white;
+}
+.DashboardText{
+    color: rgb(0, 183, 255) ;
+    font-size: 20px;
 }
 .actionbtn button{
     border-radius: 8px;
@@ -86,4 +136,9 @@ border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.tablecontainer img{
+  width: 100px;
+
 }

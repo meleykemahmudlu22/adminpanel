@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 const Box = () => {
   const [data, setData] = useState([])
   const [search, setSearch] = useState("")
-  const [open, setOpen] = useState(false)          // category dropdown açılıb-bağlanır
-  const [sortOpen, setSortOpen] = useState(false)  // price dropdown açılıb-bağlanır
-  const [sort, setSort] = useState("")             // seçilən sort növü
-  const [category, setCategory] = useState("All")  // seçilən kateqoriya
+  const [open, setOpen] = useState(false)          
+  const [sortOpen, setSortOpen] = useState(false)  
+  const [sort, setSort] = useState("")             
+  const [category, setCategory] = useState("All")  
 
   useEffect(() => {
     async function getdata() {
@@ -20,7 +20,6 @@ const Box = () => {
     getdata()
   }, [])
 
-  // Filter + Sort birləşdirilmiş
   const filteredData = data
     .filter(item =>
       item.mehsul.toLowerCase().includes(search.toLowerCase()) &&
@@ -40,7 +39,7 @@ const Box = () => {
 
       <div className="BoxContainer">
         <div className="Boxfilter">
-          {/* Search */}
+       
           <div className="boxinp">
             <input
               value={search}
@@ -50,7 +49,7 @@ const Box = () => {
             />
           </div>
 
-          {/* Category Filter */}
+         
           <div className="BoxFilterBtn">
             <SlArrowDown className='filtericon' onClick={() => setOpen(!open)} />
             <button onClick={() => setOpen(!open)}>All Categories</button>
@@ -68,7 +67,6 @@ const Box = () => {
             )}
           </div>
 
-          {/* Price Sort */}
           <div className="BoxFilterBtn">
             <SlArrowDown className='sorticon' onClick={() => setSortOpen(!sortOpen)} />
             <button onClick={() => setSortOpen(!sortOpen)}>Price</button>
@@ -85,7 +83,7 @@ const Box = () => {
           </div>
         </div>
 
-        {/* Product Listing */}
+     
         <div className="BoxsCommon">
           <div className="BoxTopText">
             <h2>Product Listing</h2>
