@@ -3,15 +3,19 @@ import { FaBookAtlas } from "react-icons/fa6";
 import { FaBook } from "react-icons/fa6";
 import { IoIosBook } from "react-icons/io";
 import { IoIosBookmark } from "react-icons/io";
-import { MdModeEdit } from "react-icons/md";
-import { AiFillDelete } from "react-icons/ai";
+// import { MdModeEdit } from "react-icons/md";
+// import { AiFillDelete } from "react-icons/ai";
 import { CiSearch } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
 
 
 import "./admin.css"
+import Adminpress from "../adminpress/Adminpress";
+import AdminBook from "../AdminBook/AdminBook";
+import { useState } from "react";
 
 const Admin = () => {
+  const [page,setPage]=useState("books")
 
   return (
     <div>
@@ -30,7 +34,7 @@ const Admin = () => {
               <div className="booktext">
                 <div className="bookicon">
                   <FaBook />
-                 <p>book</p>
+                 <p onClick={()=>setPage("books")}>book</p>
               
               </div>
               <div className="bookicon">
@@ -39,7 +43,7 @@ const Admin = () => {
               </div>
              <div className="bookicon">
               <IoIosBook />
-                <p>dövrü mətbuat</p>
+                <p onClick={()=>setPage("metbuat")}>dövrü mətbuat</p>
              </div>
              <div className="bookicon">
               <IoIosBookmark />
@@ -51,10 +55,10 @@ const Admin = () => {
             </div>
         </div>
         <div className="DashboardContent">
-          <div className="DashboardText">
+          {/* <div className="DashboardText">
             <h2>Kitablar</h2>
-          </div>
-          <div className="TableSearch">
+          </div> */}
+          {/* <div className="TableSearch">
             <div className="serchinp">
               <CiSearch  className='serchinpicon'/>
               <input  placeholder='search' type="text" />
@@ -63,9 +67,11 @@ const Admin = () => {
               <FaPlus className='searchbtnicon' />
               <button>Add Book</button>
             </div>
-          </div>
+          </div> */}
         <div className="tablecontainer">
-            <table>
+          {page==="books"&&<AdminBook/>}
+          {page==="metbuat"&&<Adminpress/>}
+            {/* <table>
             <thead>
               <tr>
                 <th>Şəkil</th>
@@ -139,7 +145,7 @@ const Admin = () => {
               
              
             </tbody>
-          </table>
+          </table> */}
         </div>
         </div>
       </div>
