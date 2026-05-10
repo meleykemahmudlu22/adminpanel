@@ -10,26 +10,41 @@ import "./adminbook.css"
 
 const AdminBook = () => {
   const[bookopen,setBookopen]=useState(false)
-  const [books,setBooks]=useState([])
+  const [data, setData] = useState([])
   const [booksearch,setBooksearch]=useState("")
-  useEffect(() => {
+  const [title,setTitle]=useState("")
+  const [image,setImage]=useState("")
+
   async function getAddBook (){
 try {
   let {data}=await axios.get("https://678e58c7a64c82aeb1200f8c.mockapi.io/new")
-  setBooks(data)
+  setData(data)
  
 } catch (error) {
   console.error(error);
   
 }
  }
- getAddBook()
-  }, [])
-const filteredbook = books
+
+  useEffect(()=>{
+   getAddBook()
+  },[])
+const filteredbook = data
     .filter(item =>
-      item.mehsul.toLowerCase().includes(booksearch.toLowerCase()) 
+      item.mehsul?.toLowerCase().includes(booksearch.toLowerCase()) 
     )
 
+   async function getdataDelete (id){
+await axios.delete(`https://678e58c7a64c82aeb1200f8c.mockapi.io/new/${id}`)
+setData(data.filter(item=>item.id !==id))
+    }
+   async function getPost (){
+await axios.post(`https://678e58c7a64c82aeb1200f8c.mockapi.io/new`,{
+title,
+image
+})
+getAddBook()
+    }
   return (
     <div>
         <div className="DashboardContent">
@@ -50,11 +65,11 @@ const filteredbook = books
                              <div className="addbokdropdown">
                            <div className="dropdowninp">
                             <h2>Add book</h2>
-                            <input placeholder="kitabın adı" type="text" />
-                            <input placeholder="author" type="text" />
-                            <input placeholder="image" type="text" />
+                            <input onChange={(e)=>setTitle(e.target.value)} placeholder="kitabın adı" type="text" />
+                            <input  placeholder="author" type="text" />
+                            <input value={image} onChange={(e)=>setImage(e.target.value)} placeholder="image" type="text" />
                             <input placeholder="plane" type="text" />
-                            <button>Add</button>
+                            <button onClick={getPost}>Add</button>
                            </div>
                           </div>
                           )
@@ -80,8 +95,8 @@ const filteredbook = books
           <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, nobis.</td>
           <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, exercitationem.</td>
           <td className='actionbtn'>
-            <button><MdModeEdit /></button>
-            <button><AiFillDelete /></button>
+            <button ><MdModeEdit /></button>
+            <button onClick={()=>getdataDelete(item.id)}><AiFillDelete /></button>
           </td>
         </tr>
       ))}
