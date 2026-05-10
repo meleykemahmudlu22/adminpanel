@@ -14,6 +14,7 @@ const AdminBook = () => {
   const [booksearch,setBooksearch]=useState("")
   const [title,setTitle]=useState("")
   const [image,setImage]=useState("")
+  const [edit,setEdit]=useState(false)
 
   async function getAddBook (){
 try {
@@ -95,7 +96,22 @@ getAddBook()
           <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, nobis.</td>
           <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. In, exercitationem.</td>
           <td className='actionbtn'>
-            <button ><MdModeEdit /></button>
+            <button onClick={()=>setEdit(!edit)} ><MdModeEdit /></button>
+          {
+            edit&&(
+                <div className="edirdropdown">
+               
+              <div className="editdiv">
+               <h2>Edit book</h2>
+                            <input  placeholder="kitabın adı" type="text" />
+                            <input  placeholder="author" type="text" />
+                            <input  placeholder="image" type="text" />
+                            <input placeholder="plane" type="text" />
+                            <button >Add</button>
+              </div>
+            </div>
+            )
+          }
             <button onClick={()=>getdataDelete(item.id)}><AiFillDelete /></button>
           </td>
         </tr>
